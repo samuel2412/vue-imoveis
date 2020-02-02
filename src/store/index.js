@@ -20,7 +20,11 @@ export default new Vuex.Store({
   },
   mutations: {
     imoveis: (state, payload) => {
-      state.imoveis = payload.data
+      const res = payload.data
+      res.sort(function (a, b) {
+        return a.price - b.price
+      })
+      state.imoveis = res
     }
   },
   actions: {

@@ -1,7 +1,7 @@
 <template>
   <div id='app'>
     <app-navbar></app-navbar>
-    <router-view class='router'/>
+    <router-view class='router' />
   </div>
 </template>
 
@@ -15,12 +15,9 @@ export default {
   },
   beforeCreate () {
     this.$http
-      .get('http://5e148887bce1d10014baea80.mockapi.io/keycash/challenge')
+      .get('https://5e148887bce1d10014baea80.mockapi.io/keycash/challenge')
       .then(response => {
         this.setImoveis({ data: response.data })
-      })
-      .catch(error => {
-        console.log(error)
       })
   }
 }
@@ -34,7 +31,7 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-.router{
+.router {
   padding: 20px;
   padding-bottom: 50px;
 }
