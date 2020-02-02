@@ -1,13 +1,18 @@
 <template>
   <div id='app'>
-    <router-view />
+    <app-navbar></app-navbar>
+    <router-view class='router'/>
   </div>
 </template>
 
 <script>
+import Navbar from './components/Navbar.vue'
 import { mapActions } from 'vuex'
 export default {
   methods: mapActions(['setImoveis']),
+  components: {
+    appNavbar: Navbar
+  },
   created () {
     this.$http
       .get('http://5e148887bce1d10014baea80.mockapi.io/keycash/challenge')
@@ -28,5 +33,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.router{
+  margin: 20px;
 }
 </style>

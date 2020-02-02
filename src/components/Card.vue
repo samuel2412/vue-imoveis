@@ -1,5 +1,5 @@
 <template>
-  <div class='card' style='width: 18rem;'>
+  <div class='card'>
     <app-carousel :images='imovel.images'></app-carousel>
     <div class='card-body'>
       <h5 class='card-title'>{{imovel.address.formattedAddress}}</h5>
@@ -37,6 +37,9 @@ export default {
 </script>
 
 <style scoped>
+.card{
+  box-shadow: 2px 2px 3px grey;
+}
 span {
   font-size: 20px;
 }
