@@ -1,18 +1,26 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <app-navbar></app-navbar>
+    <app-card v-for='imovel in imoveis' :key='imovel.id' :imovel='imovel' ></app-card>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Navbar from '../components/Navbar.vue'
+import Card from '../components/Card.vue'
 
 export default {
-  name: 'home',
+  computed: {
+    imoveis () {
+      return this.$store.getters.getImoveis
+    }
+  },
   components: {
-    HelloWorld
+    appCard: Card,
+    appNavbar: Navbar
   }
 }
 </script>
+
+<style scocped>
+</style>
