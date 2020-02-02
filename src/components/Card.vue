@@ -1,6 +1,6 @@
 <template>
   <div class='card'>
-    <app-carousel :images='imovel.images'></app-carousel>
+    <app-carousel :images='imovel.images' :id='imovel.id'></app-carousel>
     <div class='card-body'>
       <h5 class='card-title'>{{imovel.address.formattedAddress}}</h5>
     </div>
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style scoped>
-.card{
+.card {
   box-shadow: 2px 2px 3px grey;
 }
 span {

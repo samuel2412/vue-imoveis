@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style scocped>
-.container{
+.container {
   width: 90vw;
   margin: auto;
 }

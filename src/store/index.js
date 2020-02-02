@@ -9,7 +9,9 @@ export default new Vuex.Store({
   },
   getters: {
     getImoveis: state => {
-      return state.imoveis
+      return state.imoveis.filter(imovel =>
+        imovel.id && !(imovel.address.formattedAddress.includes('??'))
+      )
     }
   },
   mutations: {
