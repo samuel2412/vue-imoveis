@@ -10,7 +10,7 @@ export default new Vuex.Store({
   getters: {
     getImoveis: state => {
       return state.imoveis.filter(imovel =>
-        imovel.id && !(imovel.address.formattedAddress.includes('??'))
+        imovel.publish && !(imovel.address.formattedAddress.includes('??'))
       )
     }
   },

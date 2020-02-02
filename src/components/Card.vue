@@ -21,7 +21,7 @@
       <li class='list-group-item'>{{imovel.parkingSpaces}}</li>-->
     </ul>
     <div class='card-body'>
-      <button class='btn btn-success'>See more</button>
+      <router-link class='btn btn-success' to='/detail' tag='button'>See more</router-link>
     </div>
   </div>
 </template>
