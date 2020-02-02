@@ -12,6 +12,10 @@ export default new Vuex.Store({
       return state.imoveis.filter(imovel =>
         imovel.publish && !(imovel.address.formattedAddress.includes('??'))
       )
+    },
+    getImovel: (state) => (payload) => {
+      const index = state.imoveis.findIndex(imovel => imovel.id === payload.id)
+      return state.imoveis[index]
     }
   },
   mutations: {

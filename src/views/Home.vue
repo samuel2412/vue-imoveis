@@ -1,7 +1,7 @@
 <template>
   <div class='container'>
     <div class='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
-      <div class='col mb-4' v-for='imovel in imoveis' :key='imovel.id' :imovel='imovel'>
+      <div class='col mb-4' v-for='imovel in imoveis' :key='imovel.id'>
         <app-card :imovel='imovel' />
       </div>
     </div>

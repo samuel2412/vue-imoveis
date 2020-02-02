@@ -13,7 +13,7 @@ export default {
   components: {
     appNavbar: Navbar
   },
-  created () {
+  beforeCreate () {
     this.$http
       .get('http://5e148887bce1d10014baea80.mockapi.io/keycash/challenge')
       .then(response => {
