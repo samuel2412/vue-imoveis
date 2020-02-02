@@ -9,6 +9,10 @@ Vue.config.productionTip = false
 
 Vue.use(VueResource)
 
+Vue.filter('currency', (value) => {
+  return (value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
+})
+
 new Vue({
   router,
   store,
