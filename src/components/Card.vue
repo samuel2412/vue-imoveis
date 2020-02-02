@@ -17,11 +17,28 @@
           {{imovel.usableArea}}m²
         </span>
       </li>
-      <!--      <li class='list-group-item'>{{imovel.bathrooms}}</li>
-      <li class='list-group-item'>{{imovel.parkingSpaces}}</li>-->
+      <li v-if='isDetail' class='list-group-item'>
+        <span>
+          <i class='material-icons'>hotel</i>
+          {{imovel.bedrooms}}
+        </span>
+      </li>
+      <li v-if='isDetail' class='list-group-item'>
+        <span>
+          <i class='material-icons'>bathtub</i>
+          {{imovel.bathrooms}}
+        </span>
+      </li>
+      <li v-if='isDetail' class='list-group-item'>
+        <span>
+          <i class='material-icons'>drive_eta</i>
+          {{imovel.parkingSpaces}}
+        </span>
+      </li>
     </ul>
     <div class='card-body'>
       <router-link
+        v-if='!isDetail'
         class='btn btn-success'
         tag='button'
         :to='"/detail/"+imovel.id'
@@ -33,7 +50,7 @@
 <script>
 import Carousel from './Carousel.vue'
 export default {
-  props: ['imovel'],
+  props: ['imovel', 'isDetail'],
   components: {
     appCarousel: Carousel
   }
@@ -47,9 +64,14 @@ export default {
 span {
   font-size: 20px;
 }
-
 .material-icons,
 .icon-text {
   vertical-align: sub;
+  color: #28a745;
+}
+.details {
+  text-transform: uppercase;
+  margin: 10px;
+  flex-direction: column;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class='container'>
     <!-- <h1>{{imovel.address.formattedAddress}}</h1> -->
-    <app-card :imovel='imovel' />
+    <app-card v-if='imovel' :imovel='imovel' :isDetail='true'/>
   </div>
 </template>
 
@@ -31,5 +31,9 @@ export default {
 }
 </script>
 
-<style>
+<style scocped>
+.container {
+  width: 90vw;
+  margin: auto;
+}
 </style>

@@ -35,6 +35,7 @@ export default {
   color: #2c3e50;
 }
 .router{
-  margin: 20px;
+  padding: 20px;
+  padding-bottom: 50px;
 }
 </style>
