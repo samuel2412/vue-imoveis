@@ -35,6 +35,9 @@
           {{imovel.parkingSpaces}}
         </span>
       </li>
+      <li v-if='isDetail' class='list-group-item'>
+        <google-map :geo='imovel.address.geolocation'/>
+      </li>
     </ul>
     <div class='card-body'>
       <router-link
@@ -49,10 +52,12 @@
 
 <script>
 import Carousel from './Carousel.vue'
+import GoogleMap from './GoogleMap.vue'
 export default {
   props: ['imovel', 'isDetail'],
   components: {
-    appCarousel: Carousel
+    appCarousel: Carousel,
+    googleMap: GoogleMap
   }
 }
 </script>

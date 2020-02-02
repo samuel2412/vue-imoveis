@@ -4,6 +4,14 @@ import './registerServiceWorker'
 import VueResource from 'vue-resource'
 import router from './router'
 import store from './store'
+import * as VueGoogleMaps from 'vue2-google-maps'
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyAsIAZu-uzbE_CBxU4Xr0xzal9tJG7BHXc',
+    libraries: 'places' // necessary for places input
+  }
+})
 
 Vue.config.productionTip = false
 
